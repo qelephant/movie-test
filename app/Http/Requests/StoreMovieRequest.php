@@ -25,7 +25,6 @@ class StoreMovieRequest extends FormRequest
     {
         return [
             'name'      => 'required|string|max:255',
-            'status'    => 'required|string|in:Inactive,Active',
             'image'     => 'required|image|mimes:jpeg,jpg,png',
             'genre_id' => 'required'
         ];

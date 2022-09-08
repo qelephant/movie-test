@@ -34,7 +34,7 @@ class MovieController extends Controller
         $imageName = Str::random(32).".".$request->image->getClientOriginalExtension();
         $movie = Movie::create([
             'name' => $request->name,
-            'status' => $request->status,
+            'status' => 'Inactive',
             'image' => $imageName
         ]);
         Storage::disk('public')->put($imageName, file_get_contents($request->image));
@@ -63,7 +63,7 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(UpdateMovieRequest $request, Movie $movie)
     {
 
         $movie->update($request->all());

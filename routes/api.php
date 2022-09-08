@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    Route::resource('movies', MovieController::class);
-    Route::resource('genres', GenreController::class);
-    Route::get('movies/{id}/active', [MovieController::class, 'activateMovie']);
+    Route::resource('movie', MovieController::class);
+    Route::resource('genre', GenreController::class);
+    Route::get('movie/{id}/active', [MovieController::class, 'activateMovie']);
 
 
